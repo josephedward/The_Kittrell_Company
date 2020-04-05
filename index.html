@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <meta charset="utf-8">
     <title>Welcome To The Kittrell Company</title>
 		<meta property="og:image" content="http://thekittrellcompany.com/images/facebook_preview.png" />
@@ -1018,12 +1022,12 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                                     <div class="col-md-4">
                                         <div id='name_error' class='error'>Please enter your name.</div>
                                         <div>
-                                            <input type='text' name='name' id='name' class="form-control" placeholder="Your Name">
+                                            <input type='text' name='name' id='form_name' class="form-control" placeholder="Your Name">
                                         </div>
 
                                         <div id='email_error' class='error'>Please enter your valid E-mail ID.</div>
                                         <div>
-                                            <input type='text' name='email' id='email' class="form-control" placeholder="Your Email">
+                                            <input type='text' name='email' id='form_email' class="form-control" placeholder="Your Email">
                                         </div>
 
                                         <div id='phone_error' class='error'>Please enter your phone number.</div>
@@ -1034,7 +1038,7 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                                     <div class="col-md-8">
                                         <div id='message_error' class='error'>Please enter your message.</div>
                                         <div>
-                                            <textarea name='message' id='message' class="form-control" placeholder="Your Message"></textarea>
+                                            <textarea name='message' id='form_message' class="form-control" placeholder="Your Message"></textarea>
                                         </div>
                                     </div>
 
@@ -1071,6 +1075,39 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                 <!-- <div id="map"></div> -->
             </section>
             <!-- section close -->
+
+            <script>
+
+                async function getUser() {
+                    try {
+                    const response = await axios.get('/contact');
+                    console.log(response);
+                    }  catch (error) {
+                    console.error(error);
+                    }
+                 }
+                $('input#send_message').on('click',function(){
+                getUser();    
+                });
+
+                
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!-- footer begin -->
             <footer>

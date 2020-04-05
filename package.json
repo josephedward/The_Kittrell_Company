@@ -1,0 +1,25 @@
+{
+  "name": "kittrell_website",
+  "version": "1.0.0",
+  "description": "Website of The Kittrell Company",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "sudo ./misc/preflight.sh && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephedward/The_Kittrell_Company.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephedward/The_Kittrell_Company/issues"
+  },
+  "homepage": "https://github.com/josephedward/The_Kittrell_Company#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
