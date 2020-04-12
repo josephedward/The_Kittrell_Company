@@ -4,7 +4,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
     <meta charset="utf-8">
     <title>Welcome To The Kittrell Company</title>
 		<meta property="og:image" content="http://thekittrellcompany.com/images/facebook_preview.png" />
@@ -1081,13 +1082,19 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                 async function getUser() {
                     try {
                     const response = await axios.get('/contact');
-                    console.log(response);
+                    console.log("response: "+JSON.parse(response));
                     }  catch (error) {
                     console.error(error);
                     }
                  }
+
                 $('input#send_message').on('click',function(){
-                getUser();    
+
+                getUser();    //works 
+                //test github secrets
+                //if can pull credentials 
+                //then you can use smtpjs on frontend? 
+                
                 });
 
                 
@@ -1152,7 +1159,7 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                            &copy; Copyright 2016 - The Kittrell Company | Designed and Maintained by <span class="id-color"> <a href="http://betterpixelsgroup.com"><img target="designedby" src="http://betterpixelsgroup.com/img/betterpixelsgroup-cube.png" alt="Better Pixels Group" title="Site Designed and maintained by Better Pixels Group" width="35"> Better Pixels Group</a></span>                     
+                            &copy; Copyright 2020 - The Kittrell Company | Designed and Maintained by Joseph Edward                      
                         </div>
                             <div class="col-md-6 text-right">
                                 <div class="social-icons">
