@@ -1,5 +1,4 @@
-misc
-misc/*
+extra
 .env
 node_modules
 node_modules/*
