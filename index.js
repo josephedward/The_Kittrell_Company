@@ -1,8 +1,4 @@
-// if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-  // .load();
-// }
-
+require('dotenv').config()
 
 const express = require("express");
 const app = express();
@@ -11,13 +7,14 @@ app.use(express.static('./'))
 const path = require("path");
 var nodemailer = require('nodemailer');
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) /
 
 app.get('/', function(req,res){
     res.sendFile('index.html', { root: path.join(__dirname, './') });
 });
 
-app.get('/contact', function(req, res) {
-
+app.post('/contact', function(req, res) {
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -30,7 +27,7 @@ app.get('/contact', function(req, res) {
 
   var mailOptions = {
     from: 'thekittrellcompany@gmail.com',
-    to: 'josephedwardwork@gmail.com',
+    to: req.body.email,
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
   };

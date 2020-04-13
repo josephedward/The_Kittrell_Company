@@ -1079,10 +1079,10 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
             <script>
 
-                async function getUser() {
+                async function contactEmail(contactEmailDestination) {
                     try {
-                    const response = await axios.get('/contact');
-                    console.log("response: "+JSON.parse(response));
+                    const response = await axios.post('/contact', {email:contactEmailDestination});
+                    console.log("response: "+response);
                     }  catch (error) {
                     console.error(error);
                     }
@@ -1090,10 +1090,9 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
                 $('input#send_message').on('click',function(){
 
-                getUser();    //works 
-                //test github secrets
-                //if can pull credentials 
-                //then you can use smtpjs on frontend? 
+                   let emailDestination = $('input#form_email').val()
+                    // console.log(emailDestination)
+                contactEmail(emailDestination);    //works 
                 
                 });
 
