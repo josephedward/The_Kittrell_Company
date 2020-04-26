@@ -1063,7 +1063,7 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                                     <span>6327 Mallory Drive</span>
                                     <span>Richmond, Virginia - 23226</span>
                                     <span><strong>Phone:</strong>804-285-7869</span>
-                                    <span><strong>Email:</strong><a href="mailto:thekittrellcompany@verizon.net">thekittrellcompany@verizon.net</a></span>
+                                    <span><strong>Email:</strong><a href="mailto:thekittrellcompany@gmail.com">thekittrellcompany@gmail.com</a></span>
                                 </address>
                             </div>
 
@@ -1079,9 +1079,9 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
             <script>
 
-                async function contactEmail(contactEmailDestination) {
+                async function contactEmail(contactEmailDestination, contactName) {
                     try {
-                    const response = await axios.post('/contact', {email:contactEmailDestination});
+                    const response = await axios.post('/contact', {email:contactEmailDestination, name:contactName, phone:contactPhone, message:contactMessage});
                     console.log("response: "+response);
                     }  catch (error) {
                     console.error(error);
@@ -1091,8 +1091,8 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                 $('input#send_message').on('click',function(){
 
                    let emailDestination = $('input#form_email').val()
-                    // console.log(emailDestination)
-                contactEmail(emailDestination);    //works 
+                   let contactNameInput = $('input#form_name').val()
+                contactEmail(emailDestination, contactNameInput);   
                 
                 });
 

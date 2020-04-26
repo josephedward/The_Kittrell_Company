@@ -16,6 +16,8 @@ app.get('/', function(req,res){
 
 app.post('/contact', function(req, res) {
 
+  req.body.name;
+
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -28,11 +30,17 @@ app.post('/contact', function(req, res) {
   var mailOptions = {
     from: 'thekittrellcompany@gmail.com',
     to: req.body.email,
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    subject: 'Howdy from The Kittrell Company!',
+    text: "Hello "+req.body.name+"!"+'\n\n'+
+    "Glad you like our houses. "+
+    "Please don't hesitate to ask any questions here. "+
+    "We are quite busy, but if you would like to discuss buying a home, "+
+    "David will contact you to set up a discussion at his earliest convenience."+
+     "\n\n"+"Best, "+"\n"+"The Kittrell Company"
   };
   
   transporter.sendMail(mailOptions, function(error, info){
+   
     if (error) {
       console.log(error);
     } else {
@@ -41,6 +49,7 @@ app.post('/contact', function(req, res) {
 
   });
 
+  //create transporter for sending contact details to us?
 });
 
 
