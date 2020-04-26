@@ -1081,7 +1081,7 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
                 async function contactEmail(contactEmailDestination, contactName) {
                     try {
-                    const response = await axios.post('/contact', {email:contactEmailDestination, name:contactName, phone:contactPhone, message:contactMessage});
+                    const response = await axios.post('/contact', {email:contactEmailDestination, name:contactName});
                     console.log("response: "+response);
                     }  catch (error) {
                     console.error(error);
