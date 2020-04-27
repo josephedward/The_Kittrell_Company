@@ -1047,8 +1047,8 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
                                         <p id='submit'>
                                             <input type='submit' id='send_message' value='Submit Form' class="btn btn-line">
                                         </p>
-                                        <div id='mail_success' class='success'>Your message has been sent successfully.</div>
-                                        <div id='mail_fail' class='error'>Sorry, error occured this time sending your message.</div>
+                                        <div id='mail_sent' class='success'>Your message has been sent successfully.</div>
+                                        <div id='mail_error' class='error'>Sorry, error occured this time sending your message.</div>
                                     </div>
                                 </div>
                             </form>
@@ -1079,12 +1079,14 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
             <script>
 
-                async function contactEmail(contactEmailDestination, contactName) {
+                async function contactEmail(contactEmailDestination, contactName, contactPhone, contactMessage) {
                     try {
-                    const response = await axios.post('/contact', {email:contactEmailDestination, name:contactName});
+                    const response = await axios.post('/contact', {email:contactEmailDestination, name:contactName, phone:contactPhone, message:contactMessage});
                     console.log("response: "+response);
+                    $('#mail_sent').show()
                     }  catch (error) {
                     console.error(error);
+                    $('#mail_error').hide()
                     }
                  }
 
@@ -1092,7 +1094,10 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
 
                    let emailDestination = $('input#form_email').val()
                    let contactNameInput = $('input#form_name').val()
-                contactEmail(emailDestination, contactNameInput);   
+                   let contactPhoneInput= $('input#phone').val()
+                //    console.log($('textarea#form_message').val())
+                   let contactMessageInput = $('textarea#form_message').val()
+                contactEmail(emailDestination, contactNameInput, contactPhoneInput, contactMessageInput);   
                 
                 });
 
@@ -1194,7 +1199,7 @@ Doug and i want you to know how much we enjoy our new home.  The house very much
     <script src="js/jquery.countTo.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/video.resize.js"></script>
-    <script src="js/validation.js"></script>
+    <script src="js/validation.js"></script> 
     <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
     <script src="js/map.js"></script>
     <script src="js/wow.min.js"></script>
