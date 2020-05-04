@@ -84,7 +84,8 @@
 			Richmond, Virginia - 23226
 		</div>
 		<div class="bpg">
-			Site Designed and maintained by <br><a href="http://betterpixelsgroup.com" style="color:#454545;">Better Pixels Group <br><img src="http://betterpixelsgroup.com/img/betterpixelsgroup-cube.png" alt="Site Designed and maintained by Better Pixels Group" title="Site Designed and maintained by Better Pixels Group" width="25"></a>
+			Site Designed and maintained by <br><a href="http://github.com/josephedward" style="color:#454545;">Joseph Edward <br>
+			
 		</div>
   </body>
 </html>
