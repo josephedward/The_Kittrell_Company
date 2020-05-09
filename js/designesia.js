@@ -251,10 +251,10 @@ jQuery(document).ready(function () {
             //alert(w);
 
             jQuery(this).find("img").stop(true).animate({
-                width: w * $scale,
-                height: h * $scale,
-                'margin-left': -w * ($scale - 1) / 2,
-                'margin-top': -h * ($scale - 1) / 2
+                // width: w * $scale,
+                // height: h * $scale,
+                // 'margin-left': -w * ($scale - 1) / 2,
+                // 'margin-top': -h * ($scale - 1) / 2
             }, 700, 'easeOutQuad');
 
 

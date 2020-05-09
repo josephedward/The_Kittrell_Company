@@ -5089,3 +5089,30 @@ section#section-home-plans {
 #section-aboutbio p{
 	font-size:14px;
 }
+
+.imgHeight{
+	height: 225px !important;
+}
+
+.imgHeight2{
+	height: 300px !important;
+}
+
+
+
+.row1{
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: center !important;
+	/* padding-right: 25px; */
+}
+
+.spacer{
+	margin: 20px;
+	/* padding: 10px; */
+}
+
+.border{
+	border: 3px solid brown;
+	outline: 2px solid gold;
+}
