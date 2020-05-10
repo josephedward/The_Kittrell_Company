@@ -5107,6 +5107,12 @@ section#section-home-plans {
 	/* padding-right: 25px; */
 }
 
+.row2{
+	margin: 0 auto !important;
+	text-align: center;
+	
+}
+
 .spacer{
 	margin: 20px;
 	/* padding: 10px; */
