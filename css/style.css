@@ -3439,6 +3439,7 @@ width:100%;
 
 .picframe{
 overflow:hidden;
+/* height:250px !important; */
 }
 
 #btn-close-x{
@@ -5121,4 +5122,8 @@ section#section-home-plans {
 .border{
 	border: 3px solid brown;
 	outline: 2px solid gold;
+}
+
+.whiteText{
+	color:white !important;
 }
