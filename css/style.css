@@ -3438,7 +3438,7 @@ width:100%;
 }
 
 .picframe{
-overflow:hidden;
+overflow:hidden !important;
 /* height:250px !important; */
 }
 
